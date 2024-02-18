@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+	  <PackageReference Include="MediatR" Version="12.2.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+	  
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.RealestateApp.Application\Demo.RealestateApp.Application.csproj" />
+    <ProjectReference Include="..\Demo.RealestateApp.Identity\Demo.RealestateApp.Identity.csproj" />
+    <ProjectReference Include="..\Demo.RealestateApp.Infrastructure\Demo.RealestateApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\Demo.RealestateApp.Persistence\Demo.RealestateApp.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
+</Project>
