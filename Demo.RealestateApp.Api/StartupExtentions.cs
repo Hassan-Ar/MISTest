@@ -14,6 +14,7 @@ namespace Demo.RealestateApp.Api
 {
     public static class StartupExtentions
     {
+
         public static WebApplication ConfigureServices(
         this WebApplicationBuilder builder)
         {
@@ -24,12 +25,14 @@ namespace Demo.RealestateApp.Api
             builder.Services.AddPersistenceService(builder.Configuration);
             builder.Services.AddIdentityServices(builder.Configuration);
             builder.Services.AddControllers().AddNewtonsoftJson();
-
-
             builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddControllers();
-
+            //builder.Services.AddScoped<LoggingMiddleware>(provider =>
+            //{
+            //    var logFilePath = Path.Combine( "./logs1/loge-.txt" );
+            //    return new LoggingMiddleware(logFilePath);
+            //});
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
@@ -50,7 +53,7 @@ namespace Demo.RealestateApp.Api
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
                 });
             }
-
+         //   app.UseMiddleware<LoggingMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseRouting();

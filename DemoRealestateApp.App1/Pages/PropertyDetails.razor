@@ -1,0 +1,233 @@
+﻿@page "/PropertyDetails"
+@using Demo.RealestateApp.App1.Service.Base
+@inject IClient client111;
+@using Demo.RealestateApp.App1.ViewModels;
+@using DemoRealestateApp.App1.Components;
+@using DemoRealestateApp.App1.Pages;
+<div class=" d-grid gap-2 d-md-flex justify-content-md-end ">
+    <Blazorise.Button class="btn btn-primary mb-5 " style="align-items:end " Clicked="()=>AddNewProperty()">New Property</Blazorise.Button>
+</div>
+@Message
+
+<DataGrid TItem="PropertyDetailVeiwModel"
+          Data="data"
+          Filterable="true"
+          ReadData="OnReadData"
+          CurrentPage="1"
+          ShowPager="true"
+          TotalItems="50"
+          Responsive="true"
+          Hoverable="true"
+          Striped="true"
+          CommandMode="DataGridCommandMode.ButtonRow"
+          SelectionMode="DataGridSelectionMode.Multiple"
+          SortMode="DataGridSortMode.Multiple"
+          EditMode="DataGridEditMode.Popup"
+          PagerOptions="new DataGridPagerOptions { ButtonSize =  Blazorise.Size.Medium , ButtonRowPosition = PagerElementPosition.Start  , TotalItemsPosition = PagerElementPosition.End}"
+          Bordered="true"
+          PageSize="3">
+
+
+    <DataGridColumn TItem="PropertyDetailVeiwModel"
+                    Field="@nameof(PropertyDetailVeiwModel.ProductAvailability)"
+                    Caption="Availability">
+        <DisplayTemplate>
+            @if (context.ProductAvailability)
+            {
+                <p>Avaliable</p>
+            }
+            else
+            {
+                <p>UnAvalibale</p>
+            }
+        </DisplayTemplate>
+    </DataGridColumn>
+    <DataGridColumn TItem="PropertyDetailVeiwModel"
+                    Field="@nameof(PropertyDetailVeiwModel.ProductTitle)"
+                    Caption="Title">
+
+    </DataGridColumn>
+    <DataGridColumn TItem="PropertyDetailVeiwModel"
+                    Field="@nameof(PropertyDetailVeiwModel.ProductPrice)"
+                    Caption="Price">
+
+    </DataGridColumn>
+
+    <DataGridColumn TItem="PropertyDetailVeiwModel"
+                    Field="@nameof(PropertyDetailVeiwModel.NumberOfRooms)"
+                    Caption="Rooms">
+    </DataGridColumn>
+    <DataGridColumn TItem="PropertyDetailVeiwModel"
+                    Field="@nameof(PropertyDetailVeiwModel.NumberOfWindows)"
+                    Caption="Windows">
+    </DataGridColumn>
+    <DataGridColumn TItem="PropertyDetailVeiwModel"
+                    Field="@nameof(PropertyDetailVeiwModel.NumberOfBeeds)"
+                    Caption="Beds">
+    </DataGridColumn>
+
+    <DataGridColumn TItem="PropertyDetailVeiwModel"
+                    Field="@nameof(PropertyDetailVeiwModel.ProductStatus)"
+                    Caption="status">
+    </DataGridColumn>
+
+
+    <DataGridEntityActionsColumn TItem="PropertyDetailVeiwModel" @ref="@EntityActionsColumn">
+
+        <DisplayTemplate>
+            <div class="row">
+                <div class="col-6"><Blazorise.Button Color="Blazorise.Color.Danger">Delete</Blazorise.Button></div>
+                <div class="col-6"> <Blazorise.Button Clicked="()=>ShowModal(context)" Color="Blazorise.Color.Secondary">Edit</Blazorise.Button></div>
+            </div>
+        </DisplayTemplate>
+    </DataGridEntityActionsColumn>
+
+</DataGrid>
+
+@* // Update property modal *@
+<Blazorise.Modal @bind-Visible="@modalVisible" onclose="@HideModal">
+    <Blazorise.ModalContent Centered>
+        <Blazorise.ModalHeader>
+            <Blazorise.ModalTitle>Property edit</Blazorise.ModalTitle>
+            <Blazorise.CloseButton />
+        </Blazorise.ModalHeader>
+        <Blazorise.ModalBody>
+            <EditForm Model="@PropertyViewModel" OnValidSubmit="@HandleValidSubmit">
+                <div class="row mb-3 ms-2">
+                    <label for="Title" class="col-sm-3 form-label">Title</label>
+                    <div class="col-sm-5">
+                        <InputText id="description" class="form-control" @bind-Value="@PropertyViewModel.ProductTitle" placeholder="@PropertyViewModel.ProductTitle"></InputText>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductTitle)" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 ms-2">
+                    <label for="description" class="col-sm-3 form-label">description</label>
+                    <div class="col-sm-5">
+                        <InputText id="description" class="form-control" @bind-Value="@PropertyViewModel.ProductDescription" placeholder="@PropertyViewModel.ProductTitle"></InputText>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductDescription)" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 ms-2">
+                    <label for="city" class="col-sm-3 form-label">city</label>
+                    <div class="col-sm-5">
+                        <InputText id="city" class="form-control" @bind-Value="@PropertyViewModel.ProductAddress.City" placeholder="city "></InputText>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductAddress.City)" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 ms-2">
+                    <label for="country" class="col-sm-3 form-label">country</label>
+                    <div class="col-sm-5">
+                        <InputText id="country" class="form-control" @bind-Value="@PropertyViewModel.ProductAddress.Country" placeholder=" country "></InputText>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductAddress.Country)" />
+                    </div>
+                </div>
+                <div class="row mb-3 ms-2">
+                    <label for="street" class="col-sm-3 form-label">street</label>
+                    <div class="col-sm-5">
+                        <InputText id="street" class="form-control" @bind-Value="@PropertyViewModel.ProductAddress.Street" placeholder="street "></InputText>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductAddress.Street)" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 ms-2">
+                    <label for="name" class="col-sm-3 form-label">Property Title: </label>
+                    <div class="col-sm-5">
+                        <InputText id="name" class="form-control" @bind-Value="@PropertyViewModel.ProductTitle" placeholder="Enter product Title"></InputText>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductTitle)" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 ms-2">
+                    <label for="price" class="col-sm-3 form-label">Property price: </label>
+                    <div class="col-sm-5">
+                        <InputNumber id="price" class="form-control" @bind-Value="@PropertyViewModel.ProductPrice" placeholder="Enter price"></InputNumber>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductPrice)" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 ms-2">
+                    <label for="price" class="col-sm-3 form-label">Property Size: </label>
+                    <div class="col-sm-5">
+                        <InputNumber id="price" class="form-control" @bind-Value="@PropertyViewModel.ProductSize" placeholder="Enter Size"></InputNumber>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductSize)" />
+                    </div>
+                </div>
+                <div class="row mb-3 ms-2">
+                    <label for="price" class="col-sm-3 form-label">beds Number: </label>
+                    <div class="col-sm-5">
+                        <InputNumber id="price" class="form-control" @bind-Value="@PropertyViewModel.NumberOfBeeds" placeholder="Beds"></InputNumber>
+                        <ValidationMessage For="@(() => PropertyViewModel.NumberOfBeeds)" />
+                    </div>
+                </div>
+                <div class="row mb-3 ms-2">
+                    <label for="price" class="col-sm-3 form-label"> Rooms Number: </label>
+                    <div class="col-sm-5">
+                        <InputNumber id="price" class="form-control" @bind-Value="@PropertyViewModel.NumberOfRooms" placeholder=" Rooms"></InputNumber>
+                        <ValidationMessage For="@(() => PropertyViewModel.NumberOfRooms)" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 ms-2">
+                    <label for="price" class="col-sm-3 form-label">Windows Number: </label>
+                    <div class="col-sm-5">
+                        <InputNumber id="price" class="form-control" @bind-Value="@PropertyViewModel.NumberOfWindows" placeholder="Windows"></InputNumber>
+                        <ValidationMessage For="@(() => PropertyViewModel.NumberOfWindows)" />
+                    </div>
+                </div>
+
+                <div class="row mb-3 ms-2">
+                    <label for="description" class="col-sm-3 form-label">description</label>
+                    <div class="col-sm-5">
+                        <InputText id="description" class="form-control" @bind-Value="@PropertyViewModel.ProductDescription" placeholder="Description"></InputText>
+                        <ValidationMessage For="@(() => PropertyViewModel.ProductDescription)" />
+                    </div>
+                </div>
+                <div class="row mb-3 ms-2">
+                    <label for="category" class="col-sm-3 form-label">Category: </label>
+                    <div class="col-sm-5">
+                        <InputSelect id="category" class="form-control" @bind-Value="@SelectedBuildingId" placeholder="non">
+                            @foreach (var building in buildings)
+                            {
+                                <option value="@building.Id">@building.ProductTitle</option>
+                            }
+                        </InputSelect>
+                    </div>
+                </div>
+                <div class=" row mb-3" style=" margin:50px">
+                    <div>
+                        <h5 class="mb-3 ms-2"> Address</h5>
+                    </div>
+                    <div class="row mb-3 ms-2">
+                        <label for="city" class="col-sm-3 form-label">city</label>
+                        <div class="col-sm-5">
+                            <InputText id="city" class="form-control" @bind-Value="@PropertyViewModel.ProductAddress.City" placeholder="city "></InputText>
+                            <ValidationMessage For="@(() => PropertyViewModel.ProductAddress.City)" />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 ms-2">
+                        <label for="country" class="col-sm-3 form-label">country</label>
+                        <div class="col-sm-5">
+                            <InputText id="country" class="form-control" @bind-Value="@PropertyViewModel.ProductAddress.Country" placeholder=" country "></InputText>
+                            <ValidationMessage For="@(() => PropertyViewModel.ProductAddress.Country)" />
+                        </div>
+                    </div>
+                    <div class="row mb-3 ms-2">
+                        <label for="street" class="col-sm-3 form-label">street</label>
+                        <div class="col-sm-5">
+                            <InputText id="street" class="form-control" @bind-Value="@PropertyViewModel.ProductAddress.Street" placeholder="street "></InputText>
+                            <ValidationMessage For="@(() => PropertyViewModel.ProductAddress.Street)" />
+                        </div>
+                    </div>
+                </div>           
+            </EditForm>
+        </Blazorise.ModalBody>
+        <Blazorise.ModalFooter>
+            <Blazorise.Button Color=Blazorise.Color.Danger Clicked="@HideModal">Close</Blazorise.Button>
+            <Blazorise.Button Color=Blazorise.Color.Success Clicked="@HideModal">Save Changes</Blazorise.Button>
+        </Blazorise.ModalFooter>
+    </Blazorise.ModalContent>
+</Blazorise.Modal>

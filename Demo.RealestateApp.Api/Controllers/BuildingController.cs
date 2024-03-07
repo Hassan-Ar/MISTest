@@ -3,7 +3,6 @@ using Demo.RealestateApp.Application.Features.Buildings.Commands.DeleteBuilding;
 using Demo.RealestateApp.Application.Features.Buildings.Commands.UpdateBuilding;
 using Demo.RealestateApp.Application.Features.Buildings.Queries;
 using Demo.RealestateApp.Application.Features.Projects.Queries;
-
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Demo.RealestateApp.Application.Features.Buildings.Queries.GetBuildingsWithFilter;
@@ -39,21 +38,21 @@ namespace Demo.RealestateApp.Api.Controllers
         }
 
 
+        //[HttpGet("{Projectid}", Name = "GetProjectBuildings")]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
+        //[ProducesDefaultResponseType]
+        //public async Task<ActionResult<List<BuildingDto>>> GetProjectBuildings(Guid Projectid)
+        //{
+        //    var result = await _mediator.Send(new GetProjectBuildingsListQuery() { ProjectId = Projectid });
+        //    return Ok(result);
+        //}
 
-
-        [HttpGet("{Projectid}", Name = "GetProjectBuildings")]
+        [HttpGet("{Buildingid}", Name = "GetBuildingById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult<List<BuildingDto>>> GetProjectBuildings(Guid Projectid)
+        public async Task<ActionResult<BuildingDto>> GetBuildingById(Guid Buildingid)
         {
-            var result = await _mediator.Send(new GetProjectBuildingsListQuery() { ProjectId = Projectid });
-            return Ok(result);
-        }
-
-        [HttpGet("{id}", Name = "GetBuildingById")]
-        public async Task<ActionResult<BuildingDto>> GetBuildingById(Guid id)
-        {
-            var result = new GetBuildingQuery() { Id = id };
+            var result = new GetBuildingQuery() { Id = Buildingid };
             return Ok(await _mediator.Send(result));
         }
 

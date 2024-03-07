@@ -7,6 +7,7 @@ using Demo.RealestateApp.Application.Features.Properties.Commands.CreateProperty
 using Demo.RealestateApp.Domain.Common;
 using Demo.RealestateApp.Domain.Entities;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +21,14 @@ namespace Demo.RealestateApp.Application.Features.Buildings.Commands.CreateBuild
         private readonly IBuildingRepository _Buildingrepository;
         private readonly IAsyncBaseRepository<Project> _projectRepository;
         private readonly IMapper _Mapper;
+        private readonly ILogger<CreateBuildingCommandHandler> _logger;
 
-        public CreateBuildingCommandHandler(IBuildingRepository buildingrepository, IMapper mapper, IAsyncBaseRepository<Project> projectRepository)
+        public CreateBuildingCommandHandler(IBuildingRepository buildingrepository, IMapper mapper, IAsyncBaseRepository<Project> projectRepository, ILogger<CreateBuildingCommandHandler> logger)
         {
-
             _Buildingrepository = buildingrepository;
             _Mapper = mapper;
             _projectRepository = projectRepository;
+            _logger = logger;
         }
 
         public async Task<Guid> Handle(CreateBuildingCommand request, CancellationToken cancellationToken)
@@ -63,8 +65,16 @@ namespace Demo.RealestateApp.Application.Features.Buildings.Commands.CreateBuild
             {
                 building.ProjectId = null;
             }
-
-            building = await _Buildingrepository.AddAsync(building);
+            try
+            {
+                building = await _Buildingrepository.AddAsync(building);
+                _logger.LogInformation($"New Building {building.ProductTitle} Is Created at {DateTime.Now} ");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to Create new building with the info{@building}  ");
+            }
+        
 
             return building.Id;
         }

@@ -33,8 +33,6 @@ namespace Demo.RealestateApp.Api.Controllers
             var result = await _mediator.Send(new GetAllAcceptedOrRefusedOrdersQuery() { input = input });
             return Ok(result);
         }
-
-
         // Buy Or rent Order
         [HttpPost(Name = "AddOrder")]
         public async Task<ActionResult<bool>> Create([FromBody] CreateOrderProductCommand createOrderProductCommand)
@@ -42,7 +40,6 @@ namespace Demo.RealestateApp.Api.Controllers
             var resulte = await _mediator.Send(createOrderProductCommand);
             return Ok(resulte);
         }
-
 
         [HttpDelete("{id}", Name = "DeleteOrder")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]

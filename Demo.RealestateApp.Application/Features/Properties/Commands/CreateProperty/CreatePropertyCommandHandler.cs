@@ -57,9 +57,9 @@ namespace Demo.RealestateApp.Application.Features.Properties.Commands.CreateProp
             property.productType = ProductType.Property;
 
             //Adding property to building Property List
-            if (request.buildingId != Guid.Empty)
+            if (request.buildingId.HasValue)
             {
-                var building = await _buildingRepository.GetByIdAsync(request.buildingId);
+                var building = await _buildingRepository.GetByIdAsync(request.buildingId.Value);
                 if(building is not null)
                 {
                     property.building = building;

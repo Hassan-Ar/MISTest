@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Demo.RealestateApp.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
   //  [Authorize]
@@ -26,7 +27,7 @@ namespace Demo.RealestateApp.Api.Controllers
         {
             _mediator = mediator;
         }
-
+        
         [HttpGet(Name = "GetAllProperties")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesDefaultResponseType]
@@ -48,7 +49,7 @@ namespace Demo.RealestateApp.Api.Controllers
         [HttpGet("{Buildingtid}", Name = "GetBuildingProperties")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult<List<PropertiesBuildingDto>>> GetProjectBuildings(Guid Buildingtid)
+        public async Task<ActionResult<List<PropertiesBuildingDto>>> GetPropertiesBuildings(Guid Buildingtid)
         {
             var result = await _mediator.Send(new GetBuildingPropertiesListQuery() { BuildingID = Buildingtid });
             return Ok(result);

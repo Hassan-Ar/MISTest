@@ -11,12 +11,14 @@ namespace Demo.RealestateApp.Application.Features.Buildings.Queries
 {
     public class BuildingDto
     {
-        public AddressDto ProductAddress { get; set; }
+        public Guid Id { get; set; }
+
         public string ProductTitle { get; set; }
         public string ProductDescription { get; set; }
         public double ProductSize { get; set; }
         public double ProductPrice { get; set; }
         public bool ProductAvailability { get; set; } = false;
+        public AddressDto ProductAddress { get; set; }
         public List<Image>? Images { get; set; }
         public ProductStatus ProductStatus { get; set; } = ProductStatus.Unknown;
         public ProductType productType { get; set; } = ProductType.Unknown;

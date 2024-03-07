@@ -1,0 +1,110 @@
+﻿@page "/BuildingDetails"
+@using Demo.RealestateApp.App1.Service.Base
+@inject IClient client111;
+@using Demo.RealestateApp.App1.ViewModels;
+@using DemoRealestateApp.App1.Components;
+@using DemoRealestateApp.App1.Pages;
+
+<Blazorise.Button class="btn btn-primary mb-5 " style="align-items:end " Clicked="()=>AddNewBuilding()">New Building</Blazorise.Button>
+
+<DataGrid TItem="BuildingViewModel"
+          Data="data"
+          Filterable="true"
+          ReadData="OnReadData"
+          CurrentPage="1"
+          ShowPager="true"
+          TotalItems="50"
+          Responsive="true"
+          Hoverable="true"
+          Striped="true"
+          CommandMode="DataGridCommandMode.ButtonRow"
+          SelectionMode="DataGridSelectionMode.Multiple"
+          SortMode="DataGridSortMode.Multiple"
+          EditMode="DataGridEditMode.Popup"
+          PagerOptions="new DataGridPagerOptions { ButtonSize =  Blazorise.Size.Medium , ButtonRowPosition = PagerElementPosition.Start  , TotalItemsPosition = PagerElementPosition.End}"
+          Bordered="true"
+          PageSize="3">
+    <DataGridColumn TItem="BuildingViewModel"
+                    Field="@nameof(BuildingViewModel.ProductAvailability)"
+                    Caption="Availability">
+        <DisplayTemplate>
+            @if (context.ProductAvailability)
+            {
+                <p>Avaliable</p>
+            }
+            else
+            {
+                <p>Unavaliable</p>
+            }
+        </DisplayTemplate>
+    </DataGridColumn>
+    <DataGridColumn TItem="BuildingViewModel"
+                    Field="@nameof(BuildingViewModel.ProductTitle)"
+                    Caption="Title">
+
+    </DataGridColumn>
+    <DataGridColumn TItem="BuildingViewModel"
+                    Field="@nameof(BuildingViewModel.ProductPrice)"
+                    Caption="Price">
+
+    </DataGridColumn>
+    <DataGridColumn TItem="BuildingViewModel"
+                    Field="@nameof(BuildingViewModel.productStatus)"
+                    Caption="status">
+    </DataGridColumn>
+
+    <DataGridEntityActionsColumn TItem="BuildingViewModel" @ref="@EntityActionsColumn">
+        <DisplayTemplate>
+            <div class="row">
+                <div class="col-6"><Blazorise.Button Color="Blazorise.Color.Danger">Delete</Blazorise.Button></div>
+                <div class="col-6"> <Blazorise.Button Clicked="()=>Change(context.Id)" Color="Blazorise.Color.Secondary">Edit</Blazorise.Button></div>
+            </div>
+        </DisplayTemplate>
+    </DataGridEntityActionsColumn>
+
+</DataGrid>
+
+
+
+
+@* 
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Building availability</th>
+                <th>Building title</th>
+                <th>building size</th>
+                <th>building price</th>
+                <th>building size</th>
+                <th>building status</th>
+                <th>building Type</th>
+                <th>building Country</th>
+                <th>building City</th>
+                <th>building Street</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var building in data)
+            {
+                <tr>
+                    <td class="event-name">@building.ProductAvailability </td>
+                    <td class="event-name">@building.ProductTitle </td>
+                    <td class="event-date">@building.ProductSize </td>
+                    <td class="event-name">@building.ProductPrice </td>
+                    <td class="event-name">@building.productStatus </td>
+                    <td class="event-name">@building.productType </td>
+                    <td class="event-name">@building.ProductAddress.Country </td>
+                    <td class="event-name">@building.ProductAddress.City </td>
+                    <td class="event-name">@building.ProductAddress.Street </td>
+                    <td>
+                        <a href="@($"BuildingEdite/{building.Id}")" class="event-purchase-button btn">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+ *@

@@ -1,0 +1,30 @@
+﻿@using Blazorise
+
+    <Blazorise.Modal @bind-Visible="@modalVisible" onclose="@HideModal">
+    <Blazorise.ModalContent Centered>
+        <ModalHeader>
+            <ModalTitle>Employee edit</ModalTitle>
+            <Blazorise.CloseButton />
+        </ModalHeader>
+        <ModalBody>
+            <Blazorise.Field>
+                <FieldLabel>Name</FieldLabel>
+                <TextEdit Placeholder="Enter name..." />
+            </Blazorise.Field>
+            <Blazorise.Field>
+                <FieldLabel>Surname</FieldLabel>
+                <TextEdit Placeholder="Enter surname..." />
+            </Blazorise.Field>
+        </ModalBody>
+        <ModalFooter>
+            <Blazorise.Button Color="Color.Secondary" Clicked="@HideModal">Close</Blazorise.Button>
+            <Blazorise.Button Color="Color.Primary" Clicked="@HideModal">Save Changes</Blazorise.Button>
+        </ModalFooter>
+    </Blazorise.ModalContent>
+</Blazorise.Modal>
+@code{
+    [Parameter]
+    public Guid Id { get; set; }
+}
+
+     

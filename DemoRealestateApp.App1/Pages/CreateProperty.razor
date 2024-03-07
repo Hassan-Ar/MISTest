@@ -1,0 +1,113 @@
+﻿@page "/CreatePropetry"
+@using Demo.RealestateApp.App1.Service.Base
+@inject IClient client111;
+@using Demo.RealestateApp.App1.ViewModels;
+@using DemoRealestateApp.App1.Components;
+@using DemoRealestateApp.App1.Pages;
+@Message
+
+<h1 class="page-title">Create New Property</h1>
+<br />
+<EditForm Model="@propertyDetailViewModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary></ValidationSummary>
+
+   <div class="row mb-3">
+        <label for="name" class="col-sm-3 form-label">Property Title: </label>
+        <div class="col-sm-8">
+            <InputText id="name" class="form-control" @bind-Value="@propertyDetailViewModel.ProductTitle" placeholder="Enter product Title"></InputText>
+            <ValidationMessage For="@(() => propertyDetailViewModel.ProductTitle)" />
+        </div>
+    </div>
+  
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label">Property price: </label>
+        <div class="col-sm-8">
+            <InputNumber id="price" class="form-control" @bind-Value="@propertyDetailViewModel.ProductPrice" placeholder="Enter price"></InputNumber>
+            <ValidationMessage For="@(() => propertyDetailViewModel.ProductPrice)" />
+        </div>
+    </div>
+   
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label">Property Size: </label>
+        <div class="col-sm-8">
+            <InputNumber id="price" class="form-control" @bind-Value="@propertyDetailViewModel.ProductSize" placeholder="Enter Size"></InputNumber>
+            <ValidationMessage For="@(() => propertyDetailViewModel.ProductSize)" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label">beds Number: </label>
+        <div class="col-sm-8">
+            <InputNumber id="price" class="form-control" @bind-Value="@propertyDetailViewModel.NumberOfBeeds" placeholder="Beds"></InputNumber>
+            <ValidationMessage For="@(() => propertyDetailViewModel.NumberOfBeeds)" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label"> Rooms Number: </label>
+        <div class="col-sm-8">
+            <InputNumber id="price" class="form-control" @bind-Value="@propertyDetailViewModel.NumberOfRooms" placeholder=" Rooms"></InputNumber>
+            <ValidationMessage For="@(() => propertyDetailViewModel.NumberOfRooms)" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label">Windows Number: </label>
+        <div class="col-sm-8">
+            <InputNumber id="price" class="form-control" @bind-Value="@propertyDetailViewModel.NumberOfWindows" placeholder="Windows"></InputNumber>
+            <ValidationMessage For="@(() => propertyDetailViewModel.NumberOfWindows)" />
+        </div>
+    </div>
+    
+    <div class="row mb-3 ">
+        <label for="description" class="col-sm-3 form-label">description</label>
+        <div class="col-sm-8">
+            <InputText id="description" class="form-control" @bind-Value="@propertyDetailViewModel.ProductDescription" placeholder="Description"></InputText>
+            <ValidationMessage For="@(() => propertyDetailViewModel.ProductDescription)" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="category" class="col-sm-3 form-label">Category: </label>
+        <div class="col-sm-8">
+            <InputSelect id="category" class="form-control" @bind-Value="@SelectedBuildingId">
+                @foreach (var building in buildings)
+                {
+                    <option value="@building.Id">@building.ProductTitle</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+    <div class=" row mb-3" style=" margin:50px">
+        <div>
+            <h2 class="mb-3"> Address</h2>
+    </div>
+    <div class="row mb-3 ">
+        <label for="city" class="col-sm-3 form-label">city</label>
+        <div class="col-sm-8">
+            <InputText id="city" class="form-control" @bind-Value="@propertyDetailViewModel.ProductAddress.City" placeholder="city "></InputText>
+            <ValidationMessage For="@(() => propertyDetailViewModel.ProductAddress.City)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ">
+        <label for="country" class="col-sm-3 form-label">country</label>
+        <div class="col-sm-8">
+            <InputText id="country" class="form-control" @bind-Value="@propertyDetailViewModel.ProductAddress.Country" placeholder=" country "></InputText>
+            <ValidationMessage For="@(() => propertyDetailViewModel.ProductAddress.Country)" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="street" class="col-sm-3 form-label">street</label>
+        <div class="col-sm-8">
+            <InputText id="street" class="form-control" @bind-Value="@propertyDetailViewModel.ProductAddress.Street" placeholder="street "></InputText>
+            <ValidationMessage For="@(() => propertyDetailViewModel.ProductAddress.Street)" />
+        </div>
+    </div>
+    </div>
+
+    <div class=" d-grid gap-2 col-6 mx-auto " style="margin-top = 100px">
+        <button type="submit" class="btn btn-primary mb-5">Save event</button>
+    </div>
+</EditForm>
+
+
+
+        

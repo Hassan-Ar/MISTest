@@ -1,0 +1,258 @@
+﻿3/6/2024 5:40:36 PM - GET /
+3/6/2024 5:40:37 PM - Status code: 404
+3/6/2024 5:40:45 PM - GET /
+3/6/2024 5:40:45 PM - Status code: 404
+3/6/2024 6:33:51 PM - GET /
+3/6/2024 6:33:51 PM - Status code: 404
+3/6/2024 6:33:53 PM - GET /api/Building
+3/6/2024 6:33:54 PM - GET /api/Building
+3/6/2024 6:34:06 PM - GET /api/Building
+3/6/2024 6:34:07 PM - GET /api/Property
+3/6/2024 6:34:55 PM - GET /
+3/6/2024 6:34:55 PM - Status code: 404
+3/6/2024 6:34:57 PM - GET /api/Building
+3/6/2024 6:34:58 PM - GET /api/Property
+3/6/2024 6:34:59 PM - Status code: 200
+3/6/2024 6:36:01 PM - GET /api/Building
+3/6/2024 6:36:01 PM - Status code: 200
+3/6/2024 6:36:01 PM - GET /api/Building
+3/6/2024 6:36:01 PM - Status code: 200
+3/6/2024 6:36:04 PM - GET /api/Building
+3/6/2024 6:36:04 PM - Status code: 200
+3/6/2024 6:36:04 PM - GET /api/Property
+3/6/2024 6:36:04 PM - Status code: 200
+3/6/2024 6:36:05 PM - GET /api/Building
+3/6/2024 6:36:05 PM - Status code: 200
+3/6/2024 6:36:05 PM - GET /api/Building
+3/6/2024 6:36:05 PM - Status code: 200
+3/6/2024 6:36:12 PM - GET /api/Building
+3/6/2024 6:36:12 PM - Status code: 200
+3/6/2024 6:36:12 PM - GET /api/Building
+3/6/2024 6:36:12 PM - Status code: 200
+3/6/2024 6:36:13 PM - GET /api/Building
+3/6/2024 6:36:13 PM - Status code: 200
+3/6/2024 6:36:13 PM - GET /api/Property
+3/6/2024 6:36:13 PM - Status code: 200
+3/6/2024 6:36:16 PM - GET /api/Building
+3/6/2024 6:36:16 PM - Status code: 200
+3/6/2024 6:36:16 PM - GET /api/Building
+3/6/2024 6:36:16 PM - Status code: 200
+3/6/2024 6:36:17 PM - GET /api/Building
+3/6/2024 6:36:17 PM - Status code: 200
+3/6/2024 6:36:17 PM - GET /api/Property
+3/6/2024 6:36:17 PM - Status code: 200
+3/6/2024 6:45:35 PM - GET /
+3/6/2024 6:45:35 PM - Status code: 404
+3/6/2024 6:46:58 PM - GET /
+3/6/2024 6:46:58 PM - Status code: 404
+3/6/2024 6:47:44 PM - GET /
+3/6/2024 6:47:44 PM - Status code: 404
+3/6/2024 6:54:16 PM - GET /
+3/6/2024 6:54:16 PM - Status code: 404
+3/6/2024 6:56:40 PM - GET /
+3/6/2024 6:56:40 PM - Status code: 404
+3/6/2024 6:57:13 PM - GET /
+3/6/2024 6:57:14 PM - Status code: 404
+3/6/2024 6:57:53 PM - GET /
+3/6/2024 6:57:53 PM - Status code: 404
+3/6/2024 7:00:58 PM - GET /
+3/6/2024 7:00:58 PM - Status code: 404
+3/6/2024 7:02:51 PM - POST /api/Account/authenticate
+3/6/2024 7:02:52 PM - Status code: 200
+3/6/2024 7:03:05 PM - POST /api/Account/authenticate
+3/6/2024 7:04:31 PM - POST /api/Account/authenticate
+3/6/2024 7:04:31 PM - Status code: 200
+3/6/2024 7:04:56 PM - GET /
+3/6/2024 7:04:56 PM - Status code: 404
+3/6/2024 7:05:12 PM - POST /api/Account/authenticate
+3/6/2024 7:05:13 PM - Status code: 200
+3/6/2024 7:06:55 PM - GET /
+3/6/2024 7:06:55 PM - Status code: 404
+3/6/2024 7:07:15 PM - POST /api/Account/authenticate
+3/6/2024 7:07:16 PM - Status code: 200
+3/6/2024 7:07:57 PM - GET /
+3/6/2024 7:07:58 PM - Status code: 404
+3/6/2024 7:08:10 PM - POST /api/Account/authenticate
+3/6/2024 7:08:13 PM - Status code: 200
+3/6/2024 7:08:36 PM - GET /
+3/6/2024 7:08:36 PM - Status code: 404
+3/6/2024 7:08:53 PM - POST /api/Account/authenticate
+3/6/2024 7:08:55 PM - Status code: 200
+3/6/2024 7:12:13 PM - GET /
+3/6/2024 7:12:14 PM - Status code: 404
+3/6/2024 7:12:24 PM - POST /api/Account/authenticate
+3/6/2024 7:12:26 PM - Status code: 200
+3/6/2024 7:17:55 PM - GET /
+3/6/2024 7:17:55 PM - Status code: 404
+3/6/2024 7:18:18 PM - GET /
+3/6/2024 7:18:18 PM - Status code: 404
+3/6/2024 7:18:33 PM - POST /api/Account/authenticate
+3/6/2024 7:18:35 PM - Status code: 200
+3/6/2024 7:19:35 PM - GET /
+3/6/2024 7:19:35 PM - Status code: 404
+3/6/2024 7:21:14 PM - POST /api/Account/authenticate
+3/6/2024 7:21:16 PM - Status code: 200
+3/6/2024 7:23:43 PM - GET /
+3/6/2024 7:23:43 PM - Status code: 404
+3/6/2024 7:24:27 PM - POST /api/Account/authenticate
+3/6/2024 7:24:28 PM - Status code: 200
+3/6/2024 7:26:14 PM - GET /
+3/6/2024 7:26:14 PM - Status code: 404
+3/6/2024 7:26:24 PM - POST /api/Account/authenticate
+3/6/2024 7:26:26 PM - Status code: 200
+3/6/2024 7:31:32 PM - GET /
+3/6/2024 7:31:32 PM - Status code: 404
+3/6/2024 7:31:54 PM - POST /api/Account/authenticate
+3/6/2024 7:31:56 PM - Status code: 200
+3/6/2024 7:39:11 PM - GET /
+3/6/2024 7:39:11 PM - Status code: 404
+3/6/2024 7:40:16 PM - GET /
+3/6/2024 7:40:16 PM - Status code: 404
+3/6/2024 7:41:01 PM - GET /
+3/6/2024 7:41:01 PM - Status code: 404
+3/6/2024 7:48:03 PM - GET /
+3/6/2024 7:48:04 PM - Status code: 404
+3/6/2024 7:50:50 PM - GET /
+3/6/2024 7:50:50 PM - Status code: 404
+3/6/2024 7:53:37 PM - GET /
+3/6/2024 7:53:37 PM - Status code: 404
+3/6/2024 7:54:10 PM - POST /api/Account/authenticate
+3/6/2024 7:54:12 PM - Status code: 200
+3/6/2024 7:55:25 PM - GET /
+3/6/2024 7:55:25 PM - Status code: 404
+3/6/2024 7:55:39 PM - POST /api/Account/authenticate
+3/6/2024 7:55:40 PM - Status code: 200
+3/6/2024 8:04:44 PM - GET /
+3/6/2024 8:04:44 PM - Status code: 404
+3/6/2024 8:04:49 PM - POST /api/Account/authenticate
+3/6/2024 8:04:52 PM - Status code: 200
+3/6/2024 8:08:24 PM - GET /
+3/6/2024 8:08:24 PM - Status code: 404
+3/6/2024 8:09:49 PM - GET /
+3/6/2024 8:09:49 PM - Status code: 404
+3/6/2024 8:10:06 PM - POST /api/Account/authenticate
+3/6/2024 8:10:37 PM - POST /api/Account/authenticate
+3/6/2024 8:10:37 PM - Status code: 200
+3/6/2024 8:11:02 PM - GET /api/Property
+3/6/2024 8:11:03 PM - Status code: 200
+3/6/2024 8:11:34 PM - GET /api/Property
+3/6/2024 8:11:34 PM - Status code: 401
+3/6/2024 8:24:14 PM - GET /
+3/6/2024 8:24:14 PM - Status code: 404
+3/6/2024 8:26:16 PM - GET /
+3/6/2024 8:26:16 PM - Status code: 404
+3/7/2024 9:31:30 AM - GET /
+3/7/2024 9:31:31 AM - Status code: 404
+3/7/2024 9:32:24 AM - GET /
+3/7/2024 9:32:24 AM - Status code: 404
+3/7/2024 9:32:27 AM - GET /api/Building
+3/7/2024 9:32:27 AM - GET /api/Property
+3/7/2024 9:32:27 AM - Status code: 401
+3/7/2024 9:32:29 AM - Status code: 200
+3/7/2024 9:32:44 AM - GET /
+3/7/2024 9:32:44 AM - Status code: 404
+3/7/2024 9:32:47 AM - GET /api/Building
+3/7/2024 9:32:47 AM - GET /api/Building
+3/7/2024 9:32:49 AM - Status code: 200
+3/7/2024 9:33:00 AM - GET /api/Building
+3/7/2024 9:33:01 AM - Status code: 200
+3/7/2024 9:33:01 AM - GET /api/Property
+3/7/2024 9:33:01 AM - Status code: 401
+3/7/2024 9:33:22 AM - GET /api/Building
+3/7/2024 9:33:22 AM - Status code: 200
+3/7/2024 9:33:22 AM - GET /api/Building
+3/7/2024 9:33:22 AM - Status code: 200
+3/7/2024 9:33:22 AM - GET /api/Property
+3/7/2024 9:33:22 AM - Status code: 401
+3/7/2024 9:33:49 AM - GET /api/Building
+3/7/2024 9:33:49 AM - Status code: 200
+3/7/2024 9:33:49 AM - GET /api/Building
+3/7/2024 9:33:49 AM - Status code: 200
+3/7/2024 9:33:49 AM - GET /api/Property
+3/7/2024 9:33:49 AM - Status code: 401
+3/7/2024 9:34:07 AM - GET /api/Building
+3/7/2024 9:34:07 AM - Status code: 200
+3/7/2024 9:34:07 AM - GET /api/Building
+3/7/2024 9:34:07 AM - Status code: 200
+3/7/2024 9:34:07 AM - GET /api/Building
+3/7/2024 9:34:07 AM - Status code: 200
+3/7/2024 9:34:34 AM - POST /api/Account/authenticate
+3/7/2024 9:34:35 AM - Status code: 200
+3/7/2024 9:38:18 AM - GET /
+3/7/2024 9:38:18 AM - Status code: 404
+3/7/2024 9:44:12 AM - GET /
+3/7/2024 9:44:12 AM - Status code: 404
+3/7/2024 9:48:08 AM - GET /
+3/7/2024 9:48:09 AM - Status code: 404
+3/7/2024 9:55:51 AM - GET /
+3/7/2024 9:55:51 AM - Status code: 404
+3/7/2024 9:56:11 AM - GET /
+3/7/2024 9:56:11 AM - Status code: 404
+3/7/2024 10:06:53 AM - GET /
+3/7/2024 10:06:53 AM - Status code: 404
+3/7/2024 10:07:18 AM - GET /
+3/7/2024 10:07:18 AM - Status code: 404
+3/7/2024 10:14:45 AM - GET /
+3/7/2024 10:14:45 AM - Status code: 404
+3/7/2024 10:15:55 AM - GET /
+3/7/2024 10:15:55 AM - Status code: 404
+3/7/2024 10:18:20 AM - GET /
+3/7/2024 10:18:20 AM - Status code: 404
+3/7/2024 10:20:53 AM - GET /
+3/7/2024 10:20:54 AM - Status code: 404
+3/7/2024 10:21:37 AM - GET /
+3/7/2024 10:21:37 AM - Status code: 404
+3/7/2024 10:23:38 AM - GET /
+3/7/2024 10:23:38 AM - Status code: 404
+3/7/2024 12:10:49 PM - GET /
+3/7/2024 12:10:49 PM - Status code: 404
+3/7/2024 12:11:00 PM - GET /api/Building
+3/7/2024 12:11:00 PM - GET /api/Building
+3/7/2024 12:11:02 PM - Status code: 200
+3/7/2024 12:11:10 PM - GET /api/Building
+3/7/2024 12:11:10 PM - Status code: 200
+3/7/2024 12:11:10 PM - GET /api/Property
+3/7/2024 12:11:10 PM - Status code: 401
+3/7/2024 12:15:40 PM - GET /
+3/7/2024 12:15:40 PM - Status code: 404
+3/7/2024 12:17:05 PM - GET /
+3/7/2024 12:17:05 PM - Status code: 404
+3/7/2024 12:46:36 PM - GET /
+3/7/2024 12:46:36 PM - Status code: 404
+3/7/2024 12:47:02 PM - POST /api/Account/authenticate
+3/7/2024 12:49:26 PM - GET /
+3/7/2024 12:49:26 PM - Status code: 404
+3/7/2024 12:49:56 PM - POST /api/Account/authenticate
+3/7/2024 12:49:58 PM - Status code: 200
+3/7/2024 12:55:32 PM - GET /
+3/7/2024 12:55:32 PM - Status code: 404
+3/7/2024 12:56:03 PM - POST /api/Account/authenticate
+3/7/2024 12:56:04 PM - Status code: 200
+3/7/2024 12:57:51 PM - GET /api/Property
+3/7/2024 12:57:51 PM - Status code: 200
+3/7/2024 1:06:09 PM - GET /
+3/7/2024 1:06:09 PM - Status code: 404
+3/7/2024 1:06:33 PM - POST /api/Account/authenticate
+3/7/2024 1:06:34 PM - Status code: 200
+3/7/2024 1:54:04 PM - GET /
+3/7/2024 1:54:05 PM - Status code: 404
+3/7/2024 1:57:46 PM - GET /
+3/7/2024 1:57:46 PM - Status code: 404
+3/7/2024 2:02:50 PM - GET /
+3/7/2024 2:02:50 PM - Status code: 404
+3/7/2024 2:03:22 PM - GET /
+3/7/2024 2:03:23 PM - Status code: 404
+3/7/2024 2:06:35 PM - GET /
+3/7/2024 2:06:35 PM - Status code: 404
+3/7/2024 2:11:53 PM - GET /
+3/7/2024 2:11:53 PM - Status code: 404
+3/7/2024 2:12:19 PM - GET /api/Building
+3/7/2024 2:12:32 PM - GET /api/Building
+3/7/2024 2:12:36 PM - Status code: 200
+3/7/2024 4:58:48 PM - GET /
+3/7/2024 4:58:48 PM - Status code: 404
+3/7/2024 5:01:36 PM - POST /api/Account/authenticate
+3/7/2024 5:01:49 PM - Status code: 200
+3/7/2024 5:02:25 PM - Status code: 200
+3/7/2024 5:03:08 PM - POST /api/Account/authenticate
+3/7/2024 5:03:08 PM - Status code: 200

@@ -22,6 +22,6 @@ namespace Demo.RealestateApp.Application.Features.Properties.Commands.CreateProp
         public ProductStatus ProductStatus { get; set; } = ProductStatus.Unknown;
         public ProductType productType { get; set; } = ProductType.Unknown;
         public CreateAddreesDto Address { get; set; }
-        public Guid buildingId { get; set; } = Guid.Empty;
+        public Guid? buildingId { get; set; } 
     }
 }

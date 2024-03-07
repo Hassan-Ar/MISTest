@@ -1,0 +1,187 @@
+﻿@page "/BuildingEdite/"
+@page "/BuildingEdite/{buildinginputID}"
+@using Demo.RealestateApp.App1.Service.Base
+@inject IClient client111;
+@using Demo.RealestateApp.App1.ViewModels;
+@using DemoRealestateApp.App1.Components;
+@using DemoRealestateApp.App1.Pages;
+
+
+<EditForm Model="@BuildingViewModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary></ValidationSummary>
+
+    <div class="row mb-3">
+        <label for="name" class="col-sm-3 form-label">Property Title: </label>
+        <div class="col-sm-8">
+            <InputText id="name" class="form-control" @bind-Value="@BuildingViewModel.ProductTitle" placeholder="title"> </InputText>
+            <ValidationMessage For="@(() => BuildingViewModel.ProductTitle)" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label">Property price: </label>
+        <div class="col-sm-8">
+            <InputNumber id="price" class="form-control" @bind-Value="@BuildingViewModel.ProductPrice" placeholder="@BuildingViewModel.ProductPrice"></InputNumber>
+            <ValidationMessage For="@(() => BuildingViewModel.ProductPrice)" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label">Property Size: </label>
+        <div class="col-sm-8">
+            <InputNumber id="price" class="form-control" @bind-Value="@BuildingViewModel.ProductSize" placeholder=" @BuildingViewModel.ProductSize"></InputNumber>
+            <ValidationMessage For="@(() => BuildingViewModel.ProductSize)" />
+        </div>
+    </div>
+
+    <div class="row mb-3 ">
+        <label for="description" class="col-sm-3 form-label">description</label>
+        <div class="col-sm-8">
+            <InputText id="description" class="form-control" @bind-Value="@BuildingViewModel.ProductDescription" placeholder="@BuildingViewModel.ProductDescription"></InputText>
+            <ValidationMessage For="@(() => BuildingViewModel.ProductDescription)" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="category" class="col-sm-3 form-label">Project: </label>
+        <div class="col-sm-8">
+
+            <InputSelect id="category" class="form-control" @bind-Value="@SelectedProjectId">
+                @foreach (var proj in projects)
+                {
+                <option value="@proj.Id">@proj.ProductTitle</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+
+    <div class=" row mb-3" style=" margin:50px">
+        <div>
+            <h2 class="mb-3"> Address</h2>
+        </div>
+        <div class="row mb-3 ">
+            <label for="city" class="col-sm-3 form-label">city</label>
+            <div class="col-sm-8">
+                <InputText id="city" class="form-control" @bind-Value="@BuildingViewModel.ProductAddress.City" ></InputText>
+                <ValidationMessage For="@(() => BuildingViewModel.ProductAddress.City)" />
+            </div>
+        </div>
+
+        <div class="row mb-3 ">
+            <label for="country" class="col-sm-3 form-label">country</label>
+            <div class="col-sm-8">
+                <InputText id="country" class="form-control" @bind-Value="@BuildingViewModel.ProductAddress.Country" ></InputText>
+                <ValidationMessage For="@(() => BuildingViewModel.ProductAddress.Country)" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="street" class="col-sm-3 form-label">street</label>
+            <div class="col-sm-8">
+                <InputText id="street" class="form-control" @bind-Value="@BuildingViewModel.ProductAddress.Street" ></InputText>
+                <ValidationMessage For="@(() => BuildingViewModel.ProductAddress.Street)" />
+            </div>
+        </div>
+    </div>
+
+    <div class=" d-grid gap-2 col-6 mx-auto " style="margin-top = 100px">
+        <button type="submit" class="btn btn-primary mb-5">Save event</button>
+    </div>
+</EditForm>
+
+
+
+@* 
+<EditForm Model="@BuildingViewModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary></ValidationSummary>
+
+    <div class="row mb-3">
+        <label for="name" class="col-sm-3 form-label">Building name: </label>
+        <div class="col-sm-8">
+            <InputText id="name" class="form-control" @bind-Value="@BuildingViewModel.ProductTitle" placeholder=" Title"></InputText>
+            <ValidationMessage For="@(() => BuildingViewModel.ProductTitle)" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label">Building price: </label>
+        <div class="col-sm-8">
+            <InputNumber id="price" class="form-control" @bind-Value="@BuildingViewModel.ProductPrice" placeholder=" price"></InputNumber>
+            <ValidationMessage For="@(() => BuildingViewModel.ProductPrice)" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="price" class="col-sm-3 form-label">Building Size: </label>
+        <div class="col-sm-8">
+            <InputNumber id="Size" class="form-control" @bind-Value="@BuildingViewModel.ProductSize" placeholder=" size"></InputNumber>
+            <ValidationMessage For="@(() => BuildingViewModel.ProductSize)" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="description" class="col-sm-3 form-label"> Building Status: </label>
+        <div class="col-sm-8">
+            <InputTextArea id="status" class="form-control" @bind-Value="@BuildingViewModel.productStatus" placeholder=" Status"></InputTextArea>
+            <ValidationMessage For="@(() => BuildingViewModel.productStatus)" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="description" class="col-sm-3 form-label">Description: </label>
+        <div class="col-sm-8">
+            <InputTextArea id="description" class="form-control" @bind-Value="@BuildingViewModel.ProductDescription" placeholder="Enter description"></InputTextArea>
+            <ValidationMessage For="@(() => BuildingViewModel.ProductDescription)" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="project" class="col-sm-3 form-label">Project: </label>
+        <div class="col-sm-8">
+            <InputSelect id="category" class="form-control" @bind-Value="@SelectedProjectId">
+                @foreach (var project in projects)
+                {
+                    <option value="@project.CategoryId">@project.ProductTitle</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+    <div>
+        <div>
+
+            <h5 class="mb-3 ms-2"> Address</h5>
+        </div>
+        <div class="row mb-3 ms-2">
+            <label for="city" class="col-sm-3 form-label">city</label>
+            <div class="col-sm-5">
+                <InputText id="city" class="form-control" @bind-Value="@BuildingViewModel.ProductAddress.City" placeholder="city "></InputText>
+                <ValidationMessage For="@(() => BuildingViewModel.ProductAddress.City)" />
+            </div>
+        </div>
+
+        <div class="row mb-3 ms-2">
+            <label for="country" class="col-sm-3 form-label">country</label>
+            <div class="col-sm-5">
+                <InputText id="country" class="form-control" @bind-Value="@BuildingViewModel.ProductAddress.Country" placeholder=" country "></InputText>
+                <ValidationMessage For="@(() => BuildingViewModel.ProductAddress.Country)" />
+            </div>
+        </div>
+        <div class="row mb-3 ms-2">
+            <label for="street" class="col-sm-3 form-label">street</label>
+            <div class="col-sm-5">
+                <InputText id="street" class="form-control" @bind-Value="@BuildingViewModel.ProductAddress.Street" placeholder="street "></InputText>
+                <ValidationMessage For="@(() => BuildingViewModel.ProductAddress.Street)" />
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="submit-button">Save Building</button>
+
+</EditForm>
+
+@if (SelectedBuildingId != Guid.Empty)
+{
+    <p>
+      
+    </p>
+}
+<br />
+ *@
